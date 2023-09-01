@@ -46,3 +46,47 @@ body {
   font-size: 20px;
   color: #fff;
 }
+.fr-card-name,
+.back-card-name {
+  position: absolute;
+  margin-top: -29px;
+  margin-left: 22px;
+  font-size: 9px;
+  color: #fff;
+}
+.card-expire-data,
+.card-expire-data-bg {
+  margin-left: 81px;
+}
+.Continue {
+  width: 327px;
+  height: 53px;
+  background-color: #21092f;
+  color: #fff;
+  font-size: 18px;
+  font-family: Space Grotesk;
+}
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  margin-top: 60px;
+}
+
+.Continue {
+  border: none;
+  border-radius: 8px;
+  font-family: Space Grotesk;
+}
+.thanks-txt {
+  font-size: 28px;
+  color: #21092f;
+  font-family: Space Grotesk;
+}
+.tnx-second-txt {
+  font-size: 20px;
+  color: #8f8694;
+  margin-top: -19px;
+  font-family: Space Grotesk;
+}

@@ -19,6 +19,10 @@ function Front() {
                     <div className="card-front">
                         <span className="cardfrontnumber">0000 0000 0000 0000 </span>
                         <img src={cardfront} alt="cardfront" className="card-fr-front" width="276" height="147"></img>
+                        <div className="fr-card-name">
+                            <span className="fr-name">JANE APPLESEED</span>
+                            <span className="card-expire-data">00/00</span>
+                        </div>
                     </div>
                 </div>
             </div>
