@@ -14,7 +14,35 @@
   width: 375px;
   height: 704px;
   background-color: #fff;
+  border-radius: 7px;
 }
 body {
   background-color: #cdcccc;
+}
+.front-main {
+  position: absolute;
+}
+.card-bg {
+  margin-top: -192px;
+  margin-left: 82px;
+}
+.card-front {
+  margin-top: -68px;
+  margin-left: 11px;
+}
+
+.bgcardtxt,
+.backcardtxt {
+  color: #fff;
+  margin-top: 63px;
+  position: absolute;
+  margin-left: -54px;
+}
+.cardfrontnumber,
+.cardbacknumber {
+  position: absolute;
+  margin-top: 87px;
+  margin-left: 21px;
+  font-size: 20px;
+  color: #fff;
 }
