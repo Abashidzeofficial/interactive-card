@@ -1,10 +1,15 @@
 import React from 'react';
-import './App.css';
+
+import './components/styles.css';
+import Front from './components/Front';
+import Back from './components/Back';
+
 
 function App() {
   return (
-    <div className="App">
-
+    <div className="container">
+      <Front />
+      {/* <Back /> */}
     </div>
   );
 }
