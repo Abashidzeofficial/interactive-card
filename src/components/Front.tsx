@@ -3,6 +3,7 @@ import './styles.css';
 import bgfront from '../images/bg-main-mobile.png';
 import bgcard from '../images/bg-card-back.png';
 import cardfront from '../images/bg-card-front.png';
+import desktopbg from '../images/bg-main-desktop.png';
 
 
 
@@ -11,6 +12,7 @@ function Front() {
         <div className="front-container">
             <div className="front-main">
                 <img src={bgfront} alt="bg" className="bg-front" width="375"></img>
+                <img src={desktopbg} alt="desktopbg" className="desktop-bg" />
                 <div className="front-card">
                     <div className="card-bg">
                         <img src={bgcard} alt="bgcard" className="bg-card" width="276" height="147"></img>

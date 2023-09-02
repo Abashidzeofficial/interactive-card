@@ -4,19 +4,21 @@ import bgback from '../images/bg-main-mobile.png';
 import backcard from '../images/bg-card-back.png';
 import bgcardfront from '../images/bg-card-front.png';
 import thanksIcon from '../images/icon-complete.svg';
+import desktopbackbg from '../images/bg-main-desktop.png';
 function Back() {
     return (
         <div className="back-container">
             <div className="back-main">
                 <img src={bgback} alt="bg" className="back" width="375"></img>
+                <img src={desktopbackbg} alt="desktopbg" className="desktop-back-bg" />
                 <div className="back-card">
-                    <div className="card-bg">
-                        <img src={backcard} alt="bgcard" className="bg-card" width="276" height="147"></img>
+                    <div className="card-back-bag">
+                        <img src={backcard} alt="bgcard" className="back-bg-card" width="276" height="147"></img>
                         <span className="backcardtxt">000</span>
                     </div>
-                    <div className="card-front">
+                    <div className="card-back-front">
                         <span className="cardbacknumber">0000 0000 0000 0000 </span>
-                        <img src={bgcardfront} alt="cardfront" className="card-fr-front" width="276" height="147"></img>
+                        <img src={bgcardfront} alt="cardfront" className="card-bg-front" width="276" height="147"></img>
                         <div className="back-card-name">
                             <span className="back-name">JANE APPLESEED</span>
                             <span className="card-expire-data-bg">00/00</span>

@@ -11,6 +11,8 @@
         "bgfront",
         "cardbacknumber",
         "cardfront",
-        "cardfrontnumber"
+        "cardfrontnumber",
+        "desktopbackbg",
+        "desktopbg"
     ]
 }

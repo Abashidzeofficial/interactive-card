@@ -8,8 +8,8 @@ import Back from './components/Back';
 function App() {
   return (
     <div className="container">
-      <Front />
-      {/* <Back /> */}
+      {/* <Front /> */}
+      <Back />
     </div>
   );
 }
