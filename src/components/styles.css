@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:wght@700&display=swap");
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,7 +38,8 @@ body {
   color: #fff;
   margin-top: 63px;
   position: absolute;
-  margin-left: -54px;
+  margin-left: -59px;
+  font-family: "Space Grotesk", sans-serif;
 }
 .cardfrontnumber,
 .cardbacknumber {
@@ -45,18 +48,21 @@ body {
   margin-left: 21px;
   font-size: 20px;
   color: #fff;
+  font-family: "Space Grotesk", sans-serif;
 }
 .fr-card-name,
 .back-card-name {
   position: absolute;
   margin-top: -29px;
   margin-left: 22px;
-  font-size: 9px;
+  font-size: 11px;
   color: #fff;
+  font-family: "Space Grotesk", sans-serif;
 }
 .card-expire-data,
 .card-expire-data-bg {
   margin-left: 81px;
+  font-family: "Space Grotesk", sans-serif;
 }
 .Continue {
   width: 327px;
@@ -64,7 +70,7 @@ body {
   background-color: #21092f;
   color: #fff;
   font-size: 18px;
-  font-family: Space Grotesk;
+  font-family: "Space Mono", monospace;
 }
 .thanks {
   display: flex;
@@ -72,6 +78,7 @@ body {
   align-items: center;
   gap: 36px;
   margin-top: 60px;
+  font-family: "Space Grotesk", sans-serif;
 }
 
 .Continue {
@@ -89,4 +96,97 @@ body {
   color: #8f8694;
   margin-top: -19px;
   font-family: Space Grotesk;
+}
+.input-name,
+.input-name-card {
+  width: 327px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.name-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.number-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-mm {
+  width: 72px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.input-yy {
+  width: 72px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.input-eg-number {
+  width: 164px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.exp-data {
+  display: flex;
+  gap: 10px;
+}
+.config {
+  width: 327px;
+  height: 53px;
+  border: 7px;
+  margin-top: 20px;
+  background-color: #21092f;
+  color: #fff;
+  font-family: Space Grotesk;
+  font-size: 18px;
+  border-radius: 8px;
+}
+.name-number-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.cvc-txt {
+  margin-left: 20px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.exp-data {
+  margin-top: 10px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.number-input {
+  margin-top: 10px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.exp-data-number {
+  margin-top: 10px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.input-mm::placeholder {
+  padding-left: 20px;
+  font-size: 18px;
+}
+.input-yy::placeholder {
+  padding-left: 25px;
+  font-size: 18px;
+}
+.input-eg-number::placeholder {
+  padding-left: 25px;
+  font-size: 18px;
+}
+.input-name::placeholder {
+  padding-left: 20px;
 }

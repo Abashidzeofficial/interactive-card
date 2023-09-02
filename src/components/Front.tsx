@@ -25,6 +25,26 @@ function Front() {
                         </div>
                     </div>
                 </div>
+                <div className="name-number-input">
+                    <div className="name-input">
+                        <span className="cardholder-name-txt">CARDHOLDER NAME</span>
+                        <input type="text" className="input-name" placeholder='e.g Jane Applessed' />
+                    </div>
+                    <div className="number-input">
+                        <span className="card-name-txt">CARD NUMBER</span>
+                        <input type="text" className="input-name-card" placeholder='e.g 1234 5678 9123 0000' />
+                    </div>
+                    <div className="exp-data-number">
+                        <span className="exp-data-txt">EXP.DATA (MM/YY)</span>
+                        <span className="cvc-txt">CVC</span>
+                        <div className="exp-data">
+                            <input type="number" className="input-mm" placeholder='MM' />
+                            <input type="number" className="input-yy" placeholder='YY' />
+                            <input type="number" className="input-eg-number" placeholder='e.g 123' />
+                        </div>
+                        <button className="config">CONFIRM</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
