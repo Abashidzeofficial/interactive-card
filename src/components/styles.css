@@ -1,239 +1,236 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&family=Space+Mono:wght@700&display=swap");
-@media only screen and (min-width: 400px) {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  .front-container,
-  .back-container {
-    width: 375px;
-    height: 704px;
-    background-color: #fff;
-    border-radius: 7px;
-  }
-  body {
-    background-color: #cdcccc;
-  }
-  .front-main {
-    position: absolute;
-  }
-  .card-bg {
-    margin-top: -192px;
-    margin-left: 82px;
-  }
-  .card-front {
-    margin-top: -68px;
-    margin-left: 11px;
-  }
 
-  .bgcardtxt,
-  .backcardtxt {
-    color: #fff;
-    margin-top: 63px;
-    position: absolute;
-    margin-left: -59px;
-    font-family: "Space Grotesk", sans-serif;
-  }
-  .cardfrontnumber,
-  .cardbacknumber {
-    position: absolute;
-    margin-top: 87px;
-    margin-left: 21px;
-    font-size: 20px;
-    color: #fff;
-    font-family: "Space Grotesk", sans-serif;
-  }
-  .fr-card-name,
-  .back-card-name {
-    position: absolute;
-    margin-top: -29px;
-    margin-left: 22px;
-    font-size: 11px;
-    color: #fff;
-    font-family: "Space Grotesk", sans-serif;
-  }
-  .card-expire-data,
-  .card-expire-data-bg {
-    margin-left: 81px;
-    font-family: "Space Grotesk", sans-serif;
-  }
-  .Continue {
-    width: 327px;
-    height: 53px;
-    background-color: #21092f;
-    color: #fff;
-    font-size: 18px;
-    font-family: "Space Mono", monospace;
-  }
-  .thanks {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 36px;
-    margin-top: 87px;
-    font-family: "Space Grotesk", sans-serif;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.front-container,
+.back-container {
+  width: 375px;
+  height: 704px;
+  background-color: #fff;
+  border-radius: 7px;
+}
+body {
+  background-color: #cdcccc;
+}
+.front-main {
+  position: absolute;
+}
+.card-bg {
+  margin-top: -192px;
+  margin-left: 82px;
+}
+.card-front {
+  margin-top: -68px;
+  margin-left: 11px;
+}
 
-  .Continue {
-    border: none;
-    border-radius: 8px;
-    font-family: Space Grotesk;
-    cursor: pointer;
-  }
-  .thanks-txt {
-    font-size: 28px;
-    color: #21092f;
-    font-family: Space Grotesk;
-  }
-  .tnx-second-txt {
-    font-size: 20px;
-    color: #8f8694;
-    margin-top: -19px;
-    font-family: Space Grotesk;
-  }
-  .input-name,
-  .input-name-card {
-    width: 327px;
-    height: 45px;
-    border-radius: 7px;
-    border: 1px solid #dfdee0;
-  }
-  .name-input {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .number-input {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .input-mm {
-    width: 72px;
-    height: 45px;
-    border-radius: 7px;
-    border: 1px solid #dfdee0;
-  }
-  .input-yy {
-    width: 72px;
-    height: 45px;
-    border-radius: 7px;
-    border: 1px solid #dfdee0;
-  }
-  .input-eg-number {
-    width: 164px;
-    height: 45px;
-    border-radius: 7px;
-    border: 1px solid #dfdee0;
-  }
-  .exp-data {
-    display: flex;
-    gap: 10px;
-  }
-  .config {
-    width: 327px;
-    height: 53px;
-    border: 7px;
-    margin-top: 20px;
-    background-color: #21092f;
-    color: #fff;
-    font-family: Space Grotesk;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  .name-number-input {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    font-family: Space Grotesk;
-    color: #21092f;
-  }
-  .cvc-txt {
-    margin-left: 20px;
-    font-family: Space Grotesk;
-    color: #21092f;
-  }
-  .exp-data {
-    margin-top: 10px;
-    font-family: Space Grotesk;
-    color: #21092f;
-  }
-  .number-input {
-    margin-top: 10px;
-    font-family: Space Grotesk;
-    color: #21092f;
-  }
-  .exp-data-number {
-    margin-top: 10px;
-    font-family: Space Grotesk;
-    color: #21092f;
-  }
-  .input-mm::placeholder {
-    padding-left: 20px;
-    font-size: 18px;
-  }
-  .input-yy::placeholder {
-    padding-left: 25px;
-    font-size: 18px;
-  }
-  .input-eg-number::placeholder {
-    padding-left: 25px;
-    font-size: 18px;
-  }
-  .input-name::placeholder {
-    padding-left: 20px;
-  }
-  .input-name-card::placeholder {
-    padding-left: 20px;
-  }
-  input[type="number"]::-webkit-inner-spin-button,
-  input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    appearance: none;
-    margin: 0;
-  }
-  .desktop-bg {
-    display: none;
-  }
-  .desktop-back-bg {
-    display: none;
-  }
-  .card-back-bag {
-    display: flex;
-    margin-top: -231px;
-    margin-left: 79px;
-  }
-  .card-back-front {
-    display: flex;
-    margin-top: -65px;
-    margin-left: 27px;
-  }
-  .back-card-name {
-    position: absolute;
-    margin-top: 124px;
-    margin-left: 22px;
-  }
-  .card-expire-data-bg {
-    margin-left: 100px;
-  }
-  .backcardtxt {
-    margin-top: 100px;
-    position: absolute;
-    margin-left: 216px;
-  }
-  .thanks {
-    margin-top: 237px;
-    margin-left: -278px;
-  }
+.bgcardtxt,
+.backcardtxt {
+  color: #fff;
+  margin-top: 63px;
+  position: absolute;
+  margin-left: -59px;
+  font-family: "Space Grotesk", sans-serif;
+}
+.cardfrontnumber,
+.cardbacknumber {
+  position: absolute;
+  margin-top: 87px;
+  margin-left: 21px;
+  font-size: 20px;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+}
+.fr-card-name,
+.back-card-name {
+  position: absolute;
+  margin-top: -29px;
+  margin-left: 22px;
+  font-size: 11px;
+  color: #fff;
+  font-family: "Space Grotesk", sans-serif;
+}
+.card-expire-data,
+.card-expire-data-bg {
+  margin-left: 81px;
+  font-family: "Space Grotesk", sans-serif;
+}
+.Continue {
+  width: 327px;
+  height: 53px;
+  background-color: #21092f;
+  color: #fff;
+  font-size: 18px;
+  font-family: "Space Mono", monospace;
+}
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  margin-top: 87px;
+  font-family: "Space Grotesk", sans-serif;
+  margin-top: 237px;
+  margin-left: -279px;
+}
+
+.Continue {
+  border: none;
+  border-radius: 8px;
+  font-family: Space Grotesk;
+  cursor: pointer;
+}
+.thanks-txt {
+  font-size: 28px;
+  color: #21092f;
+  font-family: Space Grotesk;
+}
+.tnx-second-txt {
+  font-size: 20px;
+  color: #8f8694;
+  margin-top: -19px;
+  font-family: Space Grotesk;
+}
+.input-name,
+.input-name-card {
+  width: 327px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.name-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.number-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.input-mm {
+  width: 72px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.input-yy {
+  width: 72px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.input-eg-number {
+  width: 164px;
+  height: 45px;
+  border-radius: 7px;
+  border: 1px solid #dfdee0;
+}
+.exp-data {
+  display: flex;
+  gap: 10px;
+}
+.config {
+  width: 327px;
+  height: 53px;
+  border: 7px;
+  margin-top: 20px;
+  background-color: #21092f;
+  color: #fff;
+  font-family: Space Grotesk;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.name-number-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.cvc-txt {
+  margin-left: 20px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.exp-data {
+  margin-top: 10px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.number-input {
+  margin-top: 10px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.exp-data-number {
+  margin-top: 10px;
+  font-family: Space Grotesk;
+  color: #21092f;
+}
+.input-mm::placeholder {
+  padding-left: 20px;
+  font-size: 18px;
+}
+.input-yy::placeholder {
+  padding-left: 25px;
+  font-size: 18px;
+}
+.input-eg-number::placeholder {
+  padding-left: 25px;
+  font-size: 18px;
+}
+.input-name::placeholder {
+  padding-left: 20px;
+}
+.input-name-card::placeholder {
+  padding-left: 20px;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.desktop-bg {
+  display: none;
+}
+.desktop-back-bg {
+  display: none;
+}
+.card-back-bag {
+  display: flex;
+  margin-top: -202px;
+  margin-left: 79px;
+}
+.card-back-front {
+  display: flex;
+  margin-top: -63px;
+  margin-left: 27px;
+}
+.back-card-name {
+  position: absolute;
+  margin-top: 35px;
+  margin-left: 22px;
+}
+.card-expire-data-bg {
+  margin-left: 100px;
+}
+.backcardtxt {
+  margin-top: 62px;
+  position: absolute;
+  margin-left: 216px;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -316,11 +313,7 @@
   .back {
     display: none !important;
   }
-  .thanks-main {
-    display: flex;
-    margin-left: 323px;
-    margin-top: 43px;
-  }
+
   .cardbacknumber {
     margin-top: 153px;
     font-size: 28px;
@@ -336,5 +329,10 @@
   .backcardtxt {
     margin-top: -389px;
     margin-left: 514px;
+  }
+  .thanks-main {
+    display: flex;
+    margin-left: 555px;
+    margin-top: -125px;
   }
 }
