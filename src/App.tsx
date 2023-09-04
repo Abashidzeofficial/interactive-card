@@ -8,6 +8,10 @@ import Back from './components/Back';
 function App() {
   const [showName, setShowName] = useState<any>('');
   const [cardNumber, setCardNumber] = useState<any>('');
+  const [month, setMonth] = useState<any>('');
+  const [years, setYears] = useState<any>('');
+  const [cvc, setCvc] = useState<any>('');
+
 
 
 
@@ -21,6 +25,12 @@ function App() {
         setShowName={setShowName}
         cardNumber={cardNumber}
         setCardNumber={setCardNumber}
+        month={month}
+        setMonth={setMonth}
+        years={years}
+        setYears={setYears}
+        cvc={cvc}
+        setCvc={setCvc}
       />
       {/* <Back /> */}
     </div>

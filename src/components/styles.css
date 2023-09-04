@@ -299,7 +299,8 @@ input[type="number"]::-webkit-outer-spin-button {
     margin-top: 140px;
   }
   .fr-name,
-  .card-expire-data {
+  .card-expire-data,
+  .card-expire-data2 {
     font-size: 14px;
   }
   .card-expire-data {
