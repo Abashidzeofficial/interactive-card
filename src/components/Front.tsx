@@ -24,75 +24,118 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
     month, setMonth, years, setYears, cvc, setCvc }) => {
 
     const handleChangeName = (e: any) => {
-        setShowName(e.target.value);
-        console.log(showName);
+        const showNameValue = e.target.value;
+        if (/^[A-Za-z\s]+$/.test(showNameValue)) {    // inputshi asoebs ar chaawerinebs 
+            setShowName(showNameValue);
+        }
     }
     const handleChangeCardNumber = (e: any) => {
-        setCardNumber(e.target.value);
-        console.log(cardNumber);
+        const cardNumberValue = e.target.value;
+
+        const sanitizedValue = cardNumberValue.replace(/\D/g, '');
+
+        let formattedValue = '';
+        for (let i = 0; i < sanitizedValue.length; i += 4) {          ////mtliani funqcia awyobilia rom 4 cifrs shors gaaketos sivrce rogor baratis nomrebzea
+            formattedValue += sanitizedValue.slice(i, i + 4) + ' ';
+
+        }
+        formattedValue = formattedValue.trim();
+        setCardNumber(formattedValue);
+
     }
     const handleChangeMonth = (e: any) => {
-        setMonth(e.target.value);
-        console.log(month);
+        const monthvalue = e.target.value;
+        if (/^\d{0,2}$/.test(monthvalue)) {  //  inputshi 2 cifrze mets ar chaawerinebs
+            setMonth(monthvalue);
+        }
     }
     const handleChangeYears = (e: any) => {
-        setYears(e.target.value);
-        console.log(years);
+        const yearsvalue = e.target.value;
+        if (/^\d{0,2}$/.test(yearsvalue)) {  //  inputshi 2 cifrze mets ar chaawerinebs
+            setYears(yearsvalue);
+        }
     }
     const handleChangeCvc = (e: any) => {
-        setCvc(e.target.value);
+        const cvcvalue = e.target.value;
         console.log(cvc);
+        if (/^\d{0,3}$/.test(cvcvalue)) {   //  inputshi 3 cifrze mets ar chaawerinebs
+            setCvc(cvcvalue);
+        }
     }
     return (
         <div className="front-container">
             <div className="front-main">
-                <img src={bgfront} alt="bg" className="bg-front" width="375"></img>
+                <img src={bgfront} alt="bg"
+                    className="bg-front" width="375">
+                </img>
                 <img src={desktopbg} alt="desktopbg" className="desktop-bg" />
                 <div className="front-card">
                     <div className="card-bg">
                         <img src={bgcard} alt="bgcard"
-                            className="bg-card" width="276" height="147"></img>
-                        <span className="bgcardtxt">{cvc == "" ? "000" : cvc}</span>
+                            className="bg-card" width="276" height="147">
+                        </img>
+                        <span className="bgcardtxt">
+                            {cvc == "" ? "000" : cvc}
+                        </span>
                     </div>
                     <div className="card-front">
                         <span className="cardfrontnumber">
-                            {cardNumber == "" || /[a-z]/gi.test(cardNumber) == true ?
-                                "0000 0000 0000 0000" : cardNumber} </span>
+                            {cardNumber == "" || /[a-z]/gi.test(cardNumber) == true ? // es kodi inputshi ar chaawerinebs asoebs
+                                "0000 0000 0000 0000" : cardNumber}
+                        </span>
                         <img src={cardfront} alt="cardfront"
-                            className="card-fr-front" width="276" height="147"></img>
+                            className="card-fr-front" width="276" height="147">
+
+                        </img>
                         <div className="fr-card-name">
-                            <span className="fr-name">{showName == "" ? "JANE APPLESEED" : showName}</span>
-                            <span className="card-expire-data">{month == "" ? "00/" : month + "/"}</span>
-                            <span className="card-expire-data2">{years == "" ? "00" : years}</span>
+                            <span className="fr-name">
+                                {showName == "" ? "JANE APPLESEED" : showName}
+                            </span>
+                            <span className="card-expire-data">
+                                {month == "" ? "00/" : month + "/"}
+                            </span>
+                            <span className="card-expire-data2">
+                                {years == "" ? "00" : years}
+                            </span>
                         </div>
                     </div>
                 </div>
                 <div className="name-number-input">
                     <div className="name-input">
-                        <span className="cardholder-name-txt">CARDHOLDER NAME</span>
-                        <input type="text" className="input-name"
+                        <span className="cardholder-name-txt">
+                            CARDHOLDER NAME
+                        </span>
+                        <input type="text"
+                            className="input-name"
                             placeholder='e.g Jane Applessed'
                             onInput={handleChangeName}
                         />
                     </div>
                     <div className="number-input">
                         <span className="card-name-txt">CARD NUMBER</span>
-                        <input type="text" className="input-name-card"
+                        <input type="text"
+                            className="input-name-card"
                             placeholder='e.g 1234 5678 9123 0000'
                             onInput={handleChangeCardNumber}
+                            maxLength={16}
                         />
                     </div>
                     <div className="exp-data-number">
-                        <span className="exp-data-txt">EXP.DATA (MM/YY)</span>
+                        <span className="exp-data-txt">
+                            EXP.DATA (MM/YY)
+                        </span>
                         <span className="cvc-txt">CVC</span>
                         <div className="exp-data">
-                            <input type="number" className="input-mm"
+                            <input type="number"
+                                className="input-mm"
                                 placeholder='MM' onInput={handleChangeMonth}
                             />
-                            <input type="number" className="input-yy"
+                            <input type="number"
+                                className="input-yy"
                                 placeholder='YY' onInput={handleChangeYears}
                             />
-                            <input type="number" className="input-eg-number"
+                            <input type="number"
+                                className="input-eg-number"
                                 placeholder='e.g 123' onInput={handleChangeCvc}
                             />
                         </div>
@@ -105,4 +148,3 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
 }
 
 export default Front
-//|| /[a-z]/gi.test(cardNumber)  es kodi inputshi ar chaawerinebs asoebs

@@ -12,12 +12,6 @@ function App() {
   const [years, setYears] = useState<any>('');
   const [cvc, setCvc] = useState<any>('');
 
-
-
-
-
-
-
   return (
     <div className="container">
       <Front

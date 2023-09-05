@@ -12,8 +12,11 @@
         "cardbacknumber",
         "cardfront",
         "cardfrontnumber",
+        "cvcvalue",
         "desktopbackbg",
         "desktopbg",
-        "Frontprops"
+        "Frontprops",
+        "monthvalue",
+        "yearsvalue"
     ]
 }
