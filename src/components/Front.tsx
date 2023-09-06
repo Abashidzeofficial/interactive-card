@@ -12,20 +12,33 @@ interface frontprops {
     setShowName: any;
     cardNumber: string;
     setCardNumber: any;
-    month: string;
+    month: any;
     setMonth: any;
     years: string;
     setYears: any
-    cvc: string;
+    cvc: any;
     setCvc: any;
+    monthValue: any;
+    setMonthValue: any;
 }
 
 
 
 
-const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCardNumber,
+const Front: React.FC<frontprops> = ({ monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
     month, setMonth, years, setYears, cvc, setCvc }) => {
-    const [monthvalue, setMonthValue] = useState(cardNumber)
+
+    const handleFormatSubmitted = () => {
+        const formatData = {
+            showName,
+            cardNumber,
+            month,
+            years,
+            cvc,
+        }
+        console.log(formatData);
+    }
+
     const handleChangeName = (e: any) => {
         const showNameValue = e.target.value;
         if (/^[A-Za-z\s]+$/.test(showNameValue)) {    // inputshi asoebs ar chaawerinebs 
@@ -43,15 +56,17 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
         setCardNumber(formattedValue);
     }
     const handleChangeMonth = (e: any) => {
-        const monthvalue = e.target.value;
+        let monthvalue = e.target.value;
         if (/^\d{0,2}$/.test(monthvalue)) {  //  inputshi 2 cifrze mets ar chaawerinebs
             setMonth(monthvalue);
+            console.log(month);
         }
     }
     const handleChangeYears = (e: any) => {
         const yearsvalue = e.target.value;
         if (/^\d{0,2}$/.test(yearsvalue)) {  //  inputshi 2 cifrze mets ar chaawerinebs
             setYears(yearsvalue);
+            console.log(yearsvalue);
         }
     }
     const handleChangeCvc = (e: any) => {
@@ -61,6 +76,7 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
             setCvc(cvcvalue);
         }
     }
+
     return (
         <div className="front-container">
             <div className="front-main">
@@ -106,8 +122,12 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
                         <input type="text"
                             className="input-name"
                             placeholder='e.g Jane Applessed'
-                            onChange={handleChangeName}
-                            value={showName}
+                            onChange={(e) => {
+                                const nameValue = e.target.value;
+                                if (/^[A-Za-z\s]+$/.test(nameValue)) {
+                                    setShowName(nameValue);
+                                }
+                            }}
                         />
                     </div>
                     <div className="number-input">
@@ -148,12 +168,22 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
                                 value={cvc}
                             />
                         </div>
-                        <button className="config">CONFIRM</button>
+                        <button
+                            className="config"
+                            type="submit"
+                            onClick={handleFormatSubmitted}
+                        >CONFIRM
+                        </button>
+
                     </div>
+
                 </div>
+
             </div>
         </div>
+
     )
+
 }
 
 export default Front

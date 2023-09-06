@@ -11,6 +11,10 @@ function App() {
   const [month, setMonth] = useState<any>('');
   const [years, setYears] = useState<any>('');
   const [cvc, setCvc] = useState<any>('');
+  const [monthValue, setMonthValue] = useState<boolean>(true)
+
+
+
 
   return (
     <div className="container">
@@ -25,10 +29,15 @@ function App() {
         setYears={setYears}
         cvc={cvc}
         setCvc={setCvc}
+        monthValue={monthValue}
+        setMonthValue={setMonthValue}
       />
-      {/* <Back /> */}
+      {/* <Back
+        monthValue={monthValue}
+      /> */}
     </div>
   );
+
 }
 
 export default App;
