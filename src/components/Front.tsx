@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react'
 import './styles.css';
 import bgfront from '../images/bg-main-mobile.png';
 import bgcard from '../images/bg-card-back.png';
@@ -20,9 +21,11 @@ interface frontprops {
 }
 
 
+
+
 const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCardNumber,
     month, setMonth, years, setYears, cvc, setCvc }) => {
-
+    const [monthvalue, setMonthValue] = useState(cardNumber)
     const handleChangeName = (e: any) => {
         const showNameValue = e.target.value;
         if (/^[A-Za-z\s]+$/.test(showNameValue)) {    // inputshi asoebs ar chaawerinebs 
@@ -31,17 +34,13 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
     }
     const handleChangeCardNumber = (e: any) => {
         const cardNumberValue = e.target.value;
-
-        const sanitizedValue = cardNumberValue.replace(/\D/g, '');
-
+        const sanitizedValue = cardNumberValue.replace(/\D/g, ''); // ricxvebis garda sxvas arafers gamoataninebs
         let formattedValue = '';
         for (let i = 0; i < sanitizedValue.length; i += 4) {          ////mtliani funqcia awyobilia rom 4 cifrs shors gaaketos sivrce rogor baratis nomrebzea
             formattedValue += sanitizedValue.slice(i, i + 4) + ' ';
-
         }
         formattedValue = formattedValue.trim();
         setCardNumber(formattedValue);
-
     }
     const handleChangeMonth = (e: any) => {
         const monthvalue = e.target.value;
@@ -80,12 +79,11 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
                     </div>
                     <div className="card-front">
                         <span className="cardfrontnumber">
-                            {cardNumber == "" || /[a-z]/gi.test(cardNumber) == true ? // es kodi inputshi ar chaawerinebs asoebs
+                            {cardNumber == "" ?
                                 "0000 0000 0000 0000" : cardNumber}
                         </span>
                         <img src={cardfront} alt="cardfront"
                             className="card-fr-front" width="276" height="147">
-
                         </img>
                         <div className="fr-card-name">
                             <span className="fr-name">
@@ -108,7 +106,8 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
                         <input type="text"
                             className="input-name"
                             placeholder='e.g Jane Applessed'
-                            onInput={handleChangeName}
+                            onChange={handleChangeName}
+                            value={showName}
                         />
                     </div>
                     <div className="number-input">
@@ -117,7 +116,8 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
                             className="input-name-card"
                             placeholder='e.g 1234 5678 9123 0000'
                             onInput={handleChangeCardNumber}
-                            maxLength={16}
+                            maxLength={19}
+                            value={cardNumber}
                         />
                     </div>
                     <div className="exp-data-number">
@@ -126,17 +126,26 @@ const Front: React.FC<frontprops> = ({ showName, setShowName, cardNumber, setCar
                         </span>
                         <span className="cvc-txt">CVC</span>
                         <div className="exp-data">
-                            <input type="number"
+                            <input type="text"
                                 className="input-mm"
-                                placeholder='MM' onInput={handleChangeMonth}
+                                placeholder='MM'
+                                onInput={handleChangeMonth}
+                                maxLength={2}
+                                value={month}
                             />
-                            <input type="number"
+                            <input type="text"
                                 className="input-yy"
-                                placeholder='YY' onInput={handleChangeYears}
+                                placeholder='YY'
+                                onInput={handleChangeYears}
+                                maxLength={2}
+                                value={years}
                             />
-                            <input type="number"
+                            <input type="text"
                                 className="input-eg-number"
-                                placeholder='e.g 123' onInput={handleChangeCvc}
+                                placeholder='e.g 123'
+                                onInput={handleChangeCvc}
+                                maxLength={3}
+                                value={cvc}
                             />
                         </div>
                         <button className="config">CONFIRM</button>
