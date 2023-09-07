@@ -5,6 +5,7 @@ import Front from './components/Front';
 import Back from './components/Back';
 
 
+
 function App() {
   const [showName, setShowName] = useState<any>('');
   const [cardNumber, setCardNumber] = useState<any>('');
@@ -15,27 +16,45 @@ function App() {
   const [showThanks, setShowThanks] = useState<boolean>(false);
 
 
+  const [cardInfo, setCardInfo] = useState<any>({
+    showName: '',
+    cardNumber: '',
+    month: '',
+    years: '',
+    cvc: '',
+  });
+
+  const handleFormatSubmitted = (data: any) => {
+    setCardInfo(data);
+  };
 
 
   return (
     <div className="container">
-      {showThanks ? <Back /> : <Front
-        showName={showName}
-        setShowName={setShowName}
-        cardNumber={cardNumber}
-        setCardNumber={setCardNumber}
-        month={month}
-        setMonth={setMonth}
-        years={years}
-        setYears={setYears}
-        cvc={cvc}
-        setCvc={setCvc}
-        monthValue={monthValue}
-        setMonthValue={setMonthValue}
-        showThanks={showThanks}
-        setShowThanks={setShowThanks}
-      />}
-      {/* <Back /> */}
+      {cardInfo.showName && cardInfo.cardNumber ? (
+        <Back
+          cardInfo={cardInfo}
+          setCardInfo={setCardInfo}
+        />
+      ) : (
+        <Front
+          handleFormatSubmitted={handleFormatSubmitted}
+          showName={showName}
+          setShowName={setShowName}
+          cardNumber={cardNumber}
+          setCardNumber={setCardNumber}
+          month={month}
+          setMonth={setMonth}
+          years={years}
+          setYears={setYears}
+          cvc={cvc}
+          setCvc={setCvc}
+          monthValue={monthValue}
+          setMonthValue={setMonthValue}
+          showThanks={showThanks}
+          setShowThanks={setShowThanks}
+        />
+      )}
     </div>
   );
 

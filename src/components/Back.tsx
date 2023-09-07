@@ -5,7 +5,12 @@ import backcard from '../images/bg-card-back.png';
 import bgcardfront from '../images/bg-card-front.png';
 import thanksIcon from '../images/icon-complete.svg';
 import desktopbackbg from '../images/bg-main-desktop.png';
-function Back() {
+
+interface Backprops {
+    cardInfo: any;
+    setCardInfo: any;
+}
+const Back: React.FC<Backprops> = ({ cardInfo, setCardInfo }) => {
     return (
         <div className="back-container">
             <div className="back-main">
@@ -14,14 +19,22 @@ function Back() {
                 <div className="back-card">
                     <div className="card-back-bag">
                         <img src={backcard} alt="bgcard" className="back-bg-card" width="276" height="147"></img>
-                        <span className="backcardtxt">000</span>
+                        <span className="backcardtxt">{cardInfo == "" ? "000" : cardInfo.cvc}</span>
                     </div>
                     <div className="card-back-front">
-                        <span className="cardbacknumber">0000 0000 0000 0000 </span>
+                        <span className="cardbacknumber">{cardInfo ? cardInfo.cardNumber : '0000 0000 0000 0000'} </span>
                         <img src={bgcardfront} alt="cardfront" className="card-bg-front" width="276" height="147"></img>
                         <div className="back-card-name">
-                            <span className="back-name">JANE APPLESEED</span>
-                            <span className="card-expire-data-bg">00/00</span>
+                            <span className="back-name">
+                                {cardInfo ? cardInfo.showName : 'JANE APPLESEED'}
+                            </span>
+                            <span className="card-expire-data">
+                                {cardInfo == "" ? "00/" : cardInfo.month + "/"}
+                            </span>
+                            <span className="card-expire-data2">
+                                {cardInfo == "" ? "00" : cardInfo.years}
+                            </span>
+
                         </div>
                         <div className="thanks-main">
                             <div className="thanks">

@@ -23,17 +23,19 @@ interface frontprops {
     setMonthValue: any;
     showThanks: boolean;
     setShowThanks: any;
+    handleFormatSubmitted: any
+
 }
 
 
 
 
-const Front: React.FC<frontprops> = ({ showThanks, setShowThanks, monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
+const Front: React.FC<frontprops> = ({ handleFormatSubmitted, showThanks, setShowThanks, monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
     month, setMonth, years, setYears, cvc, setCvc }) => {
 
 
 
-    const handleFormatSubmitted = () => {
+    const handleSubmission = () => {
         const formatData = {
             showName,
             cardNumber,
@@ -41,8 +43,8 @@ const Front: React.FC<frontprops> = ({ showThanks, setShowThanks, monthValue, se
             years,
             cvc,
         }
-        setShowThanks(true);
-        console.log(formatData);
+        handleFormatSubmitted(formatData);
+
     }
 
     const handleChangeName = (e: any) => {
@@ -177,9 +179,7 @@ const Front: React.FC<frontprops> = ({ showThanks, setShowThanks, monthValue, se
                         <button
                             className="config"
                             type="submit"
-                            onClick={
-                                handleFormatSubmitted
-                            }
+                            onClick={handleSubmission}
                         >
                             CONFIRM
                         </button>
