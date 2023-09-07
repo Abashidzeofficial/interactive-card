@@ -12,13 +12,14 @@ function App() {
   const [years, setYears] = useState<any>('');
   const [cvc, setCvc] = useState<any>('');
   const [monthValue, setMonthValue] = useState<boolean>(true)
+  const [showThanks, setShowThanks] = useState<boolean>(false);
 
 
 
 
   return (
     <div className="container">
-      <Front
+      {showThanks ? <Back /> : <Front
         showName={showName}
         setShowName={setShowName}
         cardNumber={cardNumber}
@@ -31,10 +32,10 @@ function App() {
         setCvc={setCvc}
         monthValue={monthValue}
         setMonthValue={setMonthValue}
-      />
-      {/* <Back
-        monthValue={monthValue}
-      /> */}
+        showThanks={showThanks}
+        setShowThanks={setShowThanks}
+      />}
+      {/* <Back /> */}
     </div>
   );
 

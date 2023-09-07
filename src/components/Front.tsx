@@ -5,6 +5,7 @@ import bgfront from '../images/bg-main-mobile.png';
 import bgcard from '../images/bg-card-back.png';
 import cardfront from '../images/bg-card-front.png';
 import desktopbg from '../images/bg-main-desktop.png';
+import Back from './Back';
 
 
 interface frontprops {
@@ -20,13 +21,17 @@ interface frontprops {
     setCvc: any;
     monthValue: any;
     setMonthValue: any;
+    showThanks: boolean;
+    setShowThanks: any;
 }
 
 
 
 
-const Front: React.FC<frontprops> = ({ monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
+const Front: React.FC<frontprops> = ({ showThanks, setShowThanks, monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
     month, setMonth, years, setYears, cvc, setCvc }) => {
+
+
 
     const handleFormatSubmitted = () => {
         const formatData = {
@@ -36,6 +41,7 @@ const Front: React.FC<frontprops> = ({ monthValue, setMonthValue, showName, setS
             years,
             cvc,
         }
+        setShowThanks(true);
         console.log(formatData);
     }
 
@@ -171,8 +177,11 @@ const Front: React.FC<frontprops> = ({ monthValue, setMonthValue, showName, setS
                         <button
                             className="config"
                             type="submit"
-                            onClick={handleFormatSubmitted}
-                        >CONFIRM
+                            onClick={
+                                handleFormatSubmitted
+                            }
+                        >
+                            CONFIRM
                         </button>
 
                     </div>
