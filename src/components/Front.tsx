@@ -13,37 +13,92 @@ interface frontprops {
     setShowName: any;
     cardNumber: string;
     setCardNumber: any;
-    month: any;
+    month: string;
     setMonth: any;
     years: string;
-    setYears: any
-    cvc: any;
+    setYears: any;
+    cvc: string;
     setCvc: any;
     monthValue: any;
     setMonthValue: any;
     showThanks: boolean;
     setShowThanks: any;
-    handleFormatSubmitted: any
+    handleFormatSubmitted: any;
+    ///////////////////
+    showNameError: any;
+    setShowNameError: any;
+    cardNumberError: any;
+    setCardNumberError: any;
+    monthError: any;
+    yearsError: any;
+    cvcError: any;
+    setMonthError: any;
+    setYearsError: any;
+    setCvcError: any;
 
 }
 
 
 
 
-const Front: React.FC<frontprops> = ({ handleFormatSubmitted, showThanks, setShowThanks, monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
+const Front: React.FC<frontprops> = ({ monthError, yearsError, cvcError, setCvcError, setYearsError, setMonthError, cardNumberError, setCardNumberError, showNameError, setShowNameError, handleFormatSubmitted, showThanks, setShowThanks, monthValue, setMonthValue, showName, setShowName, cardNumber, setCardNumber,
     month, setMonth, years, setYears, cvc, setCvc }) => {
+
+
+    const validateInputs = () => {
+        let valid = true;
+
+        if (showName.trim() === '') {
+            setShowNameError("Can't be blank");
+            valid = false;
+        } else {
+            setShowNameError('');
+        }
+
+        if (cardNumber.trim() === '') {
+            setCardNumberError("Can't be blank");
+            valid = false;
+        } else {
+            setCardNumberError('');
+        }
+
+        if (month.trim() === '') {
+            setMonthError("Can't be blank");
+            valid = false;
+        } else {
+            setMonthError('');
+        }
+
+        if (years.trim() === '') {
+            setYearsError("Can't be blank");
+            valid = false;
+        } else {
+            setYearsError('');
+        }
+
+        if (cvc.trim() === '') {
+            setCvcError("Can't be blank");
+            valid = false;
+        } else {
+            setCvcError('');
+        }
+        return valid;
+    }
 
 
 
     const handleSubmission = () => {
-        const formatData = {
-            showName,
-            cardNumber,
-            month,
-            years,
-            cvc,
+        const isValid = validateInputs();
+        if (isValid) {
+            const formatData = {
+                showName,
+                cardNumber,
+                month,
+                years,
+                cvc,
+            };
+            handleFormatSubmitted(formatData);
         }
-        handleFormatSubmitted(formatData);
 
     }
 
@@ -136,7 +191,9 @@ const Front: React.FC<frontprops> = ({ handleFormatSubmitted, showThanks, setSho
                                     setShowName(nameValue);
                                 }
                             }}
+
                         />
+                        <span className="error-message">{showNameError}</span>
                     </div>
                     <div className="number-input">
                         <span className="card-name-txt">CARD NUMBER</span>
@@ -147,6 +204,7 @@ const Front: React.FC<frontprops> = ({ handleFormatSubmitted, showThanks, setSho
                             maxLength={19}
                             value={cardNumber}
                         />
+                        <span className="error-number">{cardNumberError}</span>
                     </div>
                     <div className="exp-data-number">
                         <span className="exp-data-txt">
@@ -161,6 +219,7 @@ const Front: React.FC<frontprops> = ({ handleFormatSubmitted, showThanks, setSho
                                 maxLength={2}
                                 value={month}
                             />
+                            <span className="error-month">{monthError}</span>
                             <input type="text"
                                 className="input-yy"
                                 placeholder='YY'
@@ -175,6 +234,7 @@ const Front: React.FC<frontprops> = ({ handleFormatSubmitted, showThanks, setSho
                                 maxLength={3}
                                 value={cvc}
                             />
+                            <span className="error-years">{yearsError}</span>
                         </div>
                         <button
                             className="config"

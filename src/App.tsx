@@ -7,13 +7,20 @@ import Back from './components/Back';
 
 
 function App() {
-  const [showName, setShowName] = useState<any>('');
-  const [cardNumber, setCardNumber] = useState<any>('');
-  const [month, setMonth] = useState<any>('');
-  const [years, setYears] = useState<any>('');
-  const [cvc, setCvc] = useState<any>('');
+  const [showName, setShowName] = useState<string>('');
+  const [cardNumber, setCardNumber] = useState<string>('');
+  const [month, setMonth] = useState<string>('');
+  const [years, setYears] = useState<string>('');
+  const [cvc, setCvc] = useState<string>('');
   const [monthValue, setMonthValue] = useState<boolean>(true)
   const [showThanks, setShowThanks] = useState<boolean>(false);
+
+  const [showNameError, setShowNameError] = useState<string>('');
+  const [cardNumberError, setCardNumberError] = useState<string>('');
+  const [monthError, setMonthError] = useState<string>('');
+  const [yearsError, setYearsError] = useState<string>('');
+  const [cvcError, setCvcError] = useState<string>('');
+
 
 
   const [cardInfo, setCardInfo] = useState<any>({
@@ -53,6 +60,17 @@ function App() {
           setMonthValue={setMonthValue}
           showThanks={showThanks}
           setShowThanks={setShowThanks}
+          showNameError={showNameError}
+          setShowNameError={setShowNameError}
+          cardNumberError={cardNumberError}
+          setCardNumberError={setCardNumberError}
+          monthError={monthError}
+          yearsError={yearsError}
+          cvcError={cvcError}
+          setMonthError={setMonthError}
+          setYearsError={setYearsError}
+          setCvcError={setCvcError}
+
         />
       )}
     </div>
